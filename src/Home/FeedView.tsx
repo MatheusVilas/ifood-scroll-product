@@ -20,7 +20,6 @@ import Animated, {
   greaterOrEq,
   and,
   lessOrEq,
-  call,
 } from 'react-native-reanimated'
 
 interface item {
@@ -82,8 +81,8 @@ const allItems: item[] = [
 ]
 
 export default function Feed() {
-  const scrollViewMenuRef = useRef<Animated.ScrollView>(null)
   const { scrollHandler, y } = useScrollHandler()
+
   const [items, setItems] = useState(allItems)
   const tabScrollViewRef = useRef(null)
 
@@ -93,7 +92,7 @@ export default function Feed() {
   }
 
   const index = new Value<number>(0)
-
+  const scrollPosition = new Value<number>(0)
   const indexTransition = withTransition(index)
   const translateX = interpolate(indexTransition, {
     inputRange: items.map((_tab, i) => i),
@@ -115,11 +114,7 @@ export default function Feed() {
                 ),
             [
               set(index, i),
-              call([], () => {
-                scrollViewMenuRef.current.getNode().scrollTo({
-                  x: i * TAB_ITEM_WIDTH,
-                })
-              }),
+              set(scrollPosition, i + 1 * TAB_ITEM_WIDTH - TAB_ITEM_WIDTH / 2),
             ],
           ),
         ),
@@ -128,11 +123,7 @@ export default function Feed() {
   )
 
   return (
-    <Animated.ScrollView
-      ref={tabScrollViewRef}
-      {...scrollHandler}
-      scrollEventThrottle={16}
-    >
+    <Animated.ScrollView ref={tabScrollViewRef} {...scrollHandler}>
       <Banner />
       <ScrollView
         style={[
@@ -196,8 +187,7 @@ export default function Feed() {
         </View>
       </ScrollView>
 
-      <Animated.ScrollView
-        ref={scrollViewMenuRef}
+      <Animated.View
         style={[
           {
             top: y,
@@ -207,11 +197,22 @@ export default function Feed() {
             backgroundColor: '#1d2d50',
           },
         ]}
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        scrollEventThrottle={16}
+        // horizontal
+        // showsHorizontalScrollIndicator={false}
+        // {...scrollHandlerMenu.scrollHandler}
       >
-        <View style={{ flexDirection: 'row' }}>
+        <Animated.View
+          style={[
+            { flexDirection: 'row' },
+            {
+              transform: [
+                {
+                  translateX: scrollPosition,
+                },
+              ],
+            },
+          ]}
+        >
           {items.map(({ label }, index) => (
             <TouchableOpacity
               style={{
@@ -261,19 +262,21 @@ export default function Feed() {
               },
             ]}
           />
-        </View>
-      </Animated.ScrollView>
+        </Animated.View>
+      </Animated.View>
 
       {items.map(({ items, color }, index) => (
         <View
+          key={index}
           onLayout={({
             nativeEvent: {
               layout: { y: anchor },
             },
           }) => onMeasurement(index, anchor)}
         >
-          {items.map(() => (
+          {items.map((_, index) => (
             <View
+              key={index}
               style={{
                 height: SCROLL_ITEM_HEIGHT,
                 width: Dimensions.get('window').width,
