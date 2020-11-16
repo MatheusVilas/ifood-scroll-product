@@ -29,55 +29,307 @@ interface item {
   color: string
   items: any
   anchor: number
+  width: number
 }
 
 const TAB_ITEM_WIDTH = 170
 const TAB_ITEM_HEIGHT = 60
 const SCROLL_ITEM_HEIGHT = 120
-const BANNER_HEIGHT = 400
 
 const allItems: item[] = [
   {
     id: '01',
     label: 'Primeiro',
     color: 'red',
-    anchor: BANNER_HEIGHT + SCROLL_ITEM_HEIGHT * 10,
-    items: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+    anchor: 0,
+    width: 0,
+    items: [
+      {
+        id: '01',
+        title: 'title',
+      },
+      {
+        id: '01',
+        title: 'title',
+      },
+      {
+        id: '01',
+        title: 'title',
+      },
+      {
+        id: '01',
+        title: 'title',
+      },
+      {
+        id: '01',
+        title: 'title',
+      },
+      {
+        id: '01',
+        title: 'title',
+      },
+      {
+        id: '01',
+        title: 'title',
+      },
+      {
+        id: '01',
+        title: 'title',
+      },
+      {
+        id: '01',
+        title: 'title',
+      },
+      {
+        id: '01',
+        title: 'title',
+      },
+    ],
   },
   {
     id: '02',
     label: 'Segundo',
     color: 'blue',
-    anchor: BANNER_HEIGHT + SCROLL_ITEM_HEIGHT * 10 * 2,
-    items: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+    anchor: 0,
+    width: 0,
+    items: [
+      {
+        id: '01',
+        title: 'title',
+      },
+      {
+        id: '01',
+        title: 'title',
+      },
+      {
+        id: '01',
+        title: 'title',
+      },
+      {
+        id: '01',
+        title: 'title',
+      },
+      {
+        id: '01',
+        title: 'title',
+      },
+      {
+        id: '01',
+        title: 'title',
+      },
+      {
+        id: '01',
+        title: 'title',
+      },
+      {
+        id: '01',
+        title: 'title',
+      },
+      {
+        id: '01',
+        title: 'title',
+      },
+      {
+        id: '01',
+        title: 'title',
+      },
+    ],
   },
   {
     id: '03',
     label: 'Terceiro',
     color: 'yellow',
-    anchor: BANNER_HEIGHT + SCROLL_ITEM_HEIGHT * 10,
-    items: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+    anchor: 0,
+    width: 0,
+    items: [
+      {
+        id: '01',
+        title: 'title',
+      },
+      {
+        id: '01',
+        title: 'title',
+      },
+      {
+        id: '01',
+        title: 'title',
+      },
+      {
+        id: '01',
+        title: 'title',
+      },
+      {
+        id: '01',
+        title: 'title',
+      },
+      {
+        id: '01',
+        title: 'title',
+      },
+      {
+        id: '01',
+        title: 'title',
+      },
+      {
+        id: '01',
+        title: 'title',
+      },
+      {
+        id: '01',
+        title: 'title',
+      },
+      {
+        id: '01',
+        title: 'title',
+      },
+    ],
   },
   {
     id: '04',
     label: 'Quarto',
     color: 'cyan',
-    anchor: BANNER_HEIGHT + SCROLL_ITEM_HEIGHT * 10,
-    items: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+    anchor: 0,
+    width: 0,
+    items: [
+      {
+        id: '01',
+        title: 'title',
+      },
+      {
+        id: '01',
+        title: 'title',
+      },
+      {
+        id: '01',
+        title: 'title',
+      },
+      {
+        id: '01',
+        title: 'title',
+      },
+      {
+        id: '01',
+        title: 'title',
+      },
+      {
+        id: '01',
+        title: 'title',
+      },
+      {
+        id: '01',
+        title: 'title',
+      },
+      {
+        id: '01',
+        title: 'title',
+      },
+      {
+        id: '01',
+        title: 'title',
+      },
+      {
+        id: '01',
+        title: 'title',
+      },
+    ],
   },
   {
     id: '05',
     label: 'Quinto',
     color: 'purple',
-    anchor: BANNER_HEIGHT + SCROLL_ITEM_HEIGHT * 10,
-    items: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+    anchor: 0,
+    width: 0,
+    items: [
+      {
+        id: '01',
+        title: 'title',
+      },
+      {
+        id: '01',
+        title: 'title',
+      },
+      {
+        id: '01',
+        title: 'title',
+      },
+      {
+        id: '01',
+        title: 'title',
+      },
+      {
+        id: '01',
+        title: 'title',
+      },
+      {
+        id: '01',
+        title: 'title',
+      },
+      {
+        id: '01',
+        title: 'title',
+      },
+      {
+        id: '01',
+        title: 'title',
+      },
+      {
+        id: '01',
+        title: 'title',
+      },
+      {
+        id: '01',
+        title: 'title',
+      },
+    ],
   },
   {
     id: '06',
     label: 'Sexto',
     color: 'brown',
-    anchor: BANNER_HEIGHT + SCROLL_ITEM_HEIGHT * 10,
-    items: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+    anchor: 0,
+    width: 0,
+    items: [
+      {
+        id: '01',
+        title: 'title',
+      },
+      {
+        id: '01',
+        title: 'title',
+      },
+      {
+        id: '01',
+        title: 'title',
+      },
+      {
+        id: '01',
+        title: 'title',
+      },
+      {
+        id: '01',
+        title: 'title',
+      },
+      {
+        id: '01',
+        title: 'title',
+      },
+      {
+        id: '01',
+        title: 'title',
+      },
+      {
+        id: '01',
+        title: 'title',
+      },
+      {
+        id: '01',
+        title: 'title',
+      },
+      {
+        id: '01',
+        title: 'title',
+      },
+    ],
   },
 ]
 
@@ -87,18 +339,26 @@ export default function Feed() {
   const [items, setItems] = useState(allItems)
   const tabScrollViewRef = useRef(null)
 
-  const onMeasurement = (index: number, anchor: number) => {
+  const onMeasurementListSize = (index: number, anchor: number) => {
     items[index] = { ...items[index], anchor }
     setItems([...items])
   }
 
+  const onMeasurementTab = (index: number, width: number) => {
+    items[index] = { ...items[index], width }
+    setItems([...items])
+  }
+
   const index = new Value<number>(0)
+  const widthBar = new Value<number>(0)
 
   const indexTransition = withTransition(index)
   const translateX = interpolate(indexTransition, {
     inputRange: items.map((_tab, i) => i),
     outputRange: items.map((_, i) => {
-      return i * TAB_ITEM_WIDTH
+      return items
+        .filter((_measurement, j) => j < i)
+        .reduce((accumulator, item) => item.width + accumulator, 0)
     }),
   })
 
@@ -115,9 +375,12 @@ export default function Feed() {
                 ),
             [
               set(index, i),
+              set(widthBar, tab.width),
               call([], () => {
                 scrollViewMenuRef.current.getNode().scrollTo({
-                  x: i * TAB_ITEM_WIDTH,
+                  x: items
+                    .filter((_measurement, j) => j < i)
+                    .reduce((accumulator, item) => item.width + accumulator, 0),
                 })
               }),
             ],
@@ -147,7 +410,7 @@ export default function Feed() {
           {items.map(({ label }, index) => (
             <TouchableOpacity
               style={{
-                width: TAB_ITEM_WIDTH,
+                paddingHorizontal: 20,
                 height: TAB_ITEM_HEIGHT,
                 borderColor: 'white',
                 borderWidth: 1,
@@ -180,7 +443,7 @@ export default function Feed() {
                 bottom: 0,
                 left: 0,
                 zIndex: 30,
-                width: TAB_ITEM_WIDTH,
+                width: widthBar,
                 height: 10,
                 backgroundColor: 'pink',
               },
@@ -215,7 +478,7 @@ export default function Feed() {
           {items.map(({ label }, index) => (
             <TouchableOpacity
               style={{
-                width: TAB_ITEM_WIDTH,
+                paddingHorizontal: 20,
                 height: TAB_ITEM_HEIGHT,
                 borderColor: 'white',
                 borderWidth: 1,
@@ -230,6 +493,15 @@ export default function Feed() {
                     .scrollTo({ y: items[index].anchor + 1 })
                 }
               }}
+              onLayout={
+                onMeasurementTab
+                  ? ({
+                      nativeEvent: {
+                        layout: { width },
+                      },
+                    }) => onMeasurementTab(index, width)
+                  : undefined
+              }
             >
               <Text
                 style={{
@@ -248,7 +520,7 @@ export default function Feed() {
                 bottom: 0,
                 left: 0,
                 zIndex: 30,
-                width: TAB_ITEM_WIDTH,
+                width: widthBar,
                 height: 10,
                 backgroundColor: 'pink',
               },
@@ -270,7 +542,7 @@ export default function Feed() {
             nativeEvent: {
               layout: { y: anchor },
             },
-          }) => onMeasurement(index, anchor)}
+          }) => onMeasurementListSize(index, anchor)}
         >
           {items.map(() => (
             <View
